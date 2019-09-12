@@ -19,7 +19,7 @@ bookmarkRouter
         return res.status(400).send(message);
       }
     }
-    const {title,url,description,rating} = req.body;
+    const { title,url,description,rating } = req.body;
 
     if(!Number.isInteger(rating) || rating < 0 || rating > 5){
       logger.error(`Invalid rating ${rating}`);
@@ -42,10 +42,15 @@ bookmarkRouter
       .json(bookmark);
   })
  bookmarkRouter
-  .route('/bookmarks/:id')
+  .route('/bookmarks/:bookmark_id')
   .get((req,res)=>{
-    const {bookmark_id} = req.params
-    const bookmark = store.bookmarks.find(bookmark => bookmark.id === bookmark_id)
+    const { bookmark_id } = req.params
+    console.log(bookmark_id)
+    const bookmark = store.bookmarks.find(c => {
+        console.log(c.id);
+        return c.id == bookmark_id
+    })
+    console.log(bookmark);
 
     if(!bookmark){
       logger.error(`Bookmark id:${bookmark_id} not found`)
@@ -56,8 +61,8 @@ bookmarkRouter
     res.json(bookmark)
   })
   .delete((req,res)=>{
-    const {bookmark_id} = req.params;
-    const bookmarkIndex = store.bookmarks.findIndex(bookmark=> bookmark.id === bookmark_id)
+    const { bookmark_id } = req.params;
+    const bookmarkIndex = store.bookmarks.findIndex(c => c.id === bookmark_id)
 
     if (bookmarkIndex === -1){
       logger.error(`Bookmark id: ${bookmark_id} not found`)
