@@ -67,3 +67,8 @@
 {"message":"Unauthorized request to path: /bookmarks/eb20986c-1cd0-4a18-b25d-ebdd28006a85","level":"error"}
 {"message":"Bookmark with id eb20986c-1cd0-4a18-b25d-ebdd28006a85 deleted","level":"info"}
 {"message":"Unauthorized request to path: /bookmarks/","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks/","level":"error"}
+{"message":"Bookmark [object Object] created","level":"info"}
+{"message":"Unauthorized request to path: /bookmarks/","level":"error"}
+{"message":"Bookmark [object Object] created","level":"info"}
+{"message":"Unauthorized request to path: /bookmarks/b143fe38-6cb2-4550-8b92-054084348d63","level":"error"}
